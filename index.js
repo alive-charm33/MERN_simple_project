@@ -31,7 +31,7 @@ mongoose
 app.get("/", (req, res) => {
     res.send("Server is working");
 });
-    app.use("/api",routes);
+app.use("/api",routes);
 
 
 // import express from "express";

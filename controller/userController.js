@@ -15,3 +15,15 @@ export const create=async(req,res)=>{
         res.status(500).json({message:"Error creating user",error:error.message});
     }
 }
+
+export const getAllUsers=async(req,res)=>{
+    try{
+        const userData=await User.find();
+        if(!userData){
+            return res.status(404).json({message:"No users found"});
+        }
+        res.status(200).json({message:"Users found", users: userData});
+    }catch(error){
+        res.status(500).json({errorMessage:error.message});
+    }
+}
