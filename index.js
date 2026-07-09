@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 app.use(bodyParser.json());
 // app.use(cors());
-// app.use('/api', routes);
+app.use('/api', routes);
 
 const PORT = process.env.PORT || 8000;
 const MONGO_URL = process.env.MONGO_URL;
@@ -31,17 +31,3 @@ mongoose
 app.get("/", (req, res) => {
     res.send("Server is working");
 });
-app.use("/api",routes);
-
-
-// import express from "express";
-
-// const app = express();
-
-// app.get("/", (req, res) => {
-//     res.send("Hello World");
-// });
-
-// app.listen(8000, () => {
-//     console.log("Listening on 8000");
-// });
